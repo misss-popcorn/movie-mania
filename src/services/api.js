@@ -37,9 +37,33 @@ const searchMovies = async (phrase) => {
     return response.data;
 }
 
+const getById = async (id) => {
+    const response = await axios.get(`/movie/${id}`);
+    return response.data;
+}
+
+const getCredits = async (id) => {
+    const response = await axios.get(`/movie/${id}/credits`);
+    return response.data;
+}
+
+const getKeywords = async (id) => {
+    const response = await axios.get(`/movie/${id}/keywords`);
+    return response.data;
+}
+
+const getRecommendations = async (id) => {
+    const response = await axios.get(`/movie/${id}/recommendations`);
+    return response.data;
+}
+
 export {
     searchMovies,
   getAllGenres,
   getNewReleases,
-  getMoviesByCategory
+  getMoviesByCategory,
+  getById,
+  getCredits,
+  getKeywords,
+  getRecommendations
 }
